@@ -272,7 +272,7 @@ ui <- tagList(
                )
              ),
              tabPanel(
-               "immunomodulatory alteration Evolution",
+               "Immunomodulatory Alteration Evolution",
                sidebarLayout(
                  sidebarPanel(
                    width = 2,
