@@ -20,7 +20,7 @@ cell_type_image_map <- c(
 
 # UI code
 ui <- tagList(
-  navbarPage("Evolution of Genetic Immune Escape Viewer",
+  navbarPage("TRajectories of Alterations in Cancer Immune Evasion-associated pathways",
              tabPanel("Introduction",
                       fluidRow(
                         column(
@@ -33,9 +33,9 @@ ui <- tagList(
                                        style = "text-align: center; margin-top: 10px; margin-bottom: 30px; font-style: italic; font-size: 20px; color: #555;",
                                        HTML("&ldquo;<b>Nothing in biology makes sense except in the light of evolution</b>&rdquo;<br>- Theodosius Dobzhansky")
                                      ),
-                                     h2("Welcome to the Evolution of Genetic Immune Escape Viewer"),
+                                     h2("Welcome to the TRajectories of Alterations in Cancer Immune Evasion-associated pathways"),
                                      # --- Intro paragraph ---
-                                     p("Immune escape is a critical hallmark of cancer progression, yet its evolutionary path largely remains unclear. When do genetic alterations in immunomodulatory pathways arise during cancer development? What precedes them, and what happens afterwards? We seek to build a pan-cancer atlas that maps the genetic evolution of immune escape. How can we get there? Click below to learn more.",
+                                     p("Immune escape is a critical hallmark of cancer progression, yet its evolutionary path largely remains unclear. When do genetic alterations in immunomodulatory pathways arise during cancer development? What precedes them, and what happens afterwards? We seek to build a pan-cancer atlas that maps the genetic evolution of immunomodulatory alterations. How can we get there? Click below to learn more.",
                                        style = "font-size: 17px; line-height: 1.4; color: #333;"
                                      ),
                                      # --- Two cards row ---
@@ -69,7 +69,7 @@ ui <- tagList(
                                                  style = "border: 1px solid #ddd; border-radius: 8px; margin-bottom: 30px;"),
                                              style = "text-align: center;"
                                            ),
-                                           p("Step-by-step guidance on how to use EvoGIE to explore immune escape evolution across different cancer WGS cohorts.",
+                                           p("Step-by-step guidance on how to use EvoGIE to explore immunomodulatory alteration evolution across different cancer WGS cohorts.",
                                              style = "text-align: center; font-size: 16px; color: #333; line-height: 1.5;"),
                                            div(
                                              style = "text-align: center;",
@@ -102,7 +102,7 @@ ui <- tagList(
                                      ),
                                      
                                      h3("Identifying Immunomodulatory Genes", style = "font-size: 22px;"),
-                                     p("The public CRISPR screen studies are comprehensively collected to identify the potential mechanisms for immune escape in cancers.",
+                                     p("The public CRISPR screen studies are comprehensively collected to identify the potential mechanisms for immunomodulatory alteration in cancers.",
                                        style = "font-size: 16px; line-height: 1.6; color: #333;"),
                                      tags$ul(
                                        tags$li("1. Published CRISPR screens were collected for identifying the regulators of MHC-I expression, response to CD8 T-cell-mediated killing, NK-cell-mediated killing, macrophage-mediated phagocytosis and γδ T-cell-mediated killing.",
@@ -272,7 +272,7 @@ ui <- tagList(
                )
              ),
              tabPanel(
-               "Immune Escape Evolution",
+               "immunomodulatory alteration Evolution",
                sidebarLayout(
                  sidebarPanel(
                    width = 2,
@@ -410,7 +410,7 @@ ui <- tagList(
                         h4("Manuscript under preparation:"),
                         style = "margin-top: 10px; text-align: left; font-size: 16px; color: #444; line-height: 1.5;",
                         p(
-                          HTML("Wenjie Chen, Toby Baker, Zhihui Zhang, Huw A Ogilvie, Peter Van Loo, Shengqing Stan Gu. Evolutionary trajectories of immune escape across cancers. <a href='https://www.biorxiv.org/content/10.1101/2025.01.17.632799v1' target='_blank'>BioRxiv preprint</a>")
+                          HTML("Wenjie Chen, Toby Baker, Zhihui Zhang, Huw A Ogilvie, Peter Van Loo, Shengqing Stan Gu. Evolutionary trajectories of immunomodulatory alteration across cancers. <a href='https://www.biorxiv.org/content/10.1101/2025.01.17.632799v1' target='_blank'>BioRxiv preprint</a>")
                           ),
                         br(),
                         p(
@@ -914,15 +914,15 @@ server <- function(input, output, session) {
   })
   
   ###################################################
-  ## Page 4 Immune Escape Evolution
+  ## Page 4 Immunomodulatory Alteration Evolution
   ###################################################
   # Single Pathway -- make bar plot for top 10 cancer types by Freq_mut for selected pathways
   observeEvent(input$escape_submit_btn, {
     loading_flag(TRUE)
     
-    withProgress(message = "Loading Immune Escape data...", value = 0.1, {
+    withProgress(message = "Loading Immunomodulatory Alteration data...", value = 0.1, {
       data <- load_escape_data(input$escape_cohort_select)
-      incProgress(0.6, detail = "Processing Immune Escape data...")
+      incProgress(0.6, detail = "Processing Immunomodulatory Alteration data...")
       
       cohort_data(data) 
       
