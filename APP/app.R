@@ -33,7 +33,17 @@ ui <- tagList(
                                        style = "text-align: center; margin-top: 10px; margin-bottom: 30px; font-style: italic; font-size: 20px; color: #555;",
                                        HTML("&ldquo;<b>Nothing in biology makes sense except in the light of evolution</b>&rdquo;<br>- Theodosius Dobzhansky")
                                      ),
-                                     h2("Welcome to the TRajectories of Alterations in Cancer Immune Evasion-associated pathways"),
+                                     h2(
+                                       tags$span(
+                                         "Welcome to the TRACIE:",
+                                         style = "font-size: 32px;"
+                                       ),
+                                       tags$br(),
+                                       tags$span(
+                                         "TRajectories of Alterations in Cancer Immune Evasion-associated pathways",
+                                         style = "font-size: 24px;"
+                                       )
+                                     ),
                                      # --- Intro paragraph ---
                                      p("Immune escape is a critical hallmark of cancer progression, yet its evolutionary path largely remains unclear. When do genetic alterations in immunomodulatory pathways arise during cancer development? What precedes them, and what happens afterwards? We seek to build a pan-cancer atlas that maps the genetic evolution of immunomodulatory alterations. How can we get there? Click below to learn more.",
                                        style = "font-size: 17px; line-height: 1.4; color: #333;"
